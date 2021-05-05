@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 
 public class ABCTest {
     @Test
-    public void should_make_word_A() {
+    public void should_make_one_letter_word() {
         List<Block> blocks = new ArrayList<>();
         blocks.add(new Block("A", "N"));
         ABCSolver abcSolver = new ABCSolver(blocks);
