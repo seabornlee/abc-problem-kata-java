@@ -25,7 +25,7 @@ public class ABCSolver {
 
     private int indexOf(List<Block> unusedBlocks, char ch) {
         for (int i = 0; i < unusedBlocks.size(); i++) {
-            if (unusedBlocks.get(i).contains(String.valueOf(ch))) {
+            if (unusedBlocks.get(i).contains(ch)) {
                 return i;
             }
         }

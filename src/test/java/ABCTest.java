@@ -10,7 +10,7 @@ public class ABCTest {
     @Test
     public void should_make_one_letter_word() {
         List<Block> blocks = new ArrayList<>();
-        blocks.add(new Block("A", "N"));
+        blocks.add(new Block('A', 'N'));
         ABCSolver abcSolver = new ABCSolver(blocks);
         assertTrue(abcSolver.canMakeWord("A"));
         assertTrue(abcSolver.canMakeWord("N"));
@@ -19,7 +19,7 @@ public class ABCTest {
     @Test
     public void should_not_reuse_block() {
         List<Block> blocks = new ArrayList<>();
-        blocks.add(new Block("A", "N"));
+        blocks.add(new Block('A', 'N'));
         ABCSolver abcSolver = new ABCSolver(blocks);
         assertFalse(abcSolver.canMakeWord("AN"));
     }
