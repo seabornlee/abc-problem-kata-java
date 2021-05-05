@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class ABCSolver {
@@ -8,7 +9,26 @@ public class ABCSolver {
     }
 
     public boolean canMakeWord(String word) {
-        return blocks.stream().anyMatch(block -> block.contains(word));
+        List<Block> unusedBlocks = new ArrayList<>(blocks);
+
+        char[] chars = word.toCharArray();
+        for (char ch : chars) {
+            int index = indexOf(unusedBlocks, ch);
+            if (index <= -1) {
+                return false;
+            }
+
+            unusedBlocks.remove(index);
+        }
+        return true;
     }
 
+    private int indexOf(List<Block> unusedBlocks, char ch) {
+        for (int i = 0; i < unusedBlocks.size(); i++) {
+            if (unusedBlocks.get(i).contains(String.valueOf(ch))) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
