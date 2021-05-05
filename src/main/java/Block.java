@@ -7,15 +7,7 @@ public class Block {
         this.sideTwo = sideTwo;
     }
 
-    public String sideOne() {
-        return sideOne;
-    }
-
-    public String sideTwo() {
-        return sideTwo;
-    }
-
     boolean contains(String letter) {
-        return sideOne().equals(letter) || sideTwo().equals(letter);
+        return sideOne.equals(letter) || sideTwo.equals(letter);
     }
 }
